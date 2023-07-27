@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../assets/logo.png';
 import '../styles/NavBar.css';
 
-
 const NavBar = () => {
   return (
     <nav className="navbar">
@@ -10,7 +9,7 @@ const NavBar = () => {
         <img src={logo} alt="Logo" />
       </div>
       <div className="title">
-        <h1>Discografia</h1>
+        <h1>Disc Manager</h1>
       </div>
     </nav>
   );

@@ -11,30 +11,32 @@ const App = () => {
   ]);
 
   const handleSearch = (keyword) => {
-    const filteredAlbums = albums.filter((album) =>
-      album.name.toLowerCase().includes(keyword.toLowerCase())
-    );
-    setAlbums(filteredAlbums);
+    // Implemente a lógica de busca aqui, se necessário
+    // ...
   };
 
   const handleAddAlbum = (albumName) => {
-    const newAlbum = {
-      id: albums.length + 1,
-      name: albumName,
-    };
-    setAlbums([...albums, newAlbum]);
+    // Implemente a lógica para adicionar álbuns aqui, se necessário
+    // ...
+  };
+
+  const handleDeleteAlbum = (albumId) => {
+    setAlbums((prevAlbums) => prevAlbums.filter((album) => album.id !== albumId));
   };
 
   return (
     <div className="App">
       <NavBar />
       <SearchBar onSearch={handleSearch} />
-      <AddAlbumForm onAddAlbum={handleAddAlbum} /> {/* Novo componente para adicionar álbuns */}
+      <AddAlbumForm onAddAlbum={handleAddAlbum} />
       <div className="album-list">
         <h2>Lista de Álbuns:</h2>
         <ul>
           {albums.map((album) => (
-            <li key={album.id}>{album.name}</li>
+            <li key={album.id}>
+              {album.name}
+              <button onClick={() => handleDeleteAlbum(album.id)}>Excluir</button>
+            </li>
           ))}
         </ul>
       </div>

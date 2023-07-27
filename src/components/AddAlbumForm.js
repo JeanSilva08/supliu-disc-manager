@@ -11,7 +11,7 @@ const AddAlbumForm = ({ onAddAlbum }) => {
     event.preventDefault();
     if (albumName.trim() !== '') {
       onAddAlbum(albumName);
-      setAlbumName(''); 
+      setAlbumName('');
     }
   };
 
