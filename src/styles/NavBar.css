@@ -1,8 +1,8 @@
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: #333;
+    align-items: center;
+    background-color: white;
     height: 80px;
     padding: 0 20px;
   }
@@ -14,5 +14,4 @@
   .title {
     margin-left: 10px;
     font-size: 24px;
-    color: white;
-  }
+    color: #333;}
