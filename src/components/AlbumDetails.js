@@ -7,7 +7,11 @@ const AlbumDetails = ({ album }) => {
       {album && (
         <div>
           <h3>{album.name}</h3>
-          {/* Adicione aqui outras informações do álbum, se necessário */}
+          <ul>
+            {album.tracks.map((track, index) => (
+              <li key={index}>{track}</li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
