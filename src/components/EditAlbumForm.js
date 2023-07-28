@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/EditAlbumForm.css'
 
 const EditAlbumForm = ({ album, onSave }) => {
   const [editedAlbumName, setEditedAlbumName] = useState(album.name);

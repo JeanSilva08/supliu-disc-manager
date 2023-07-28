@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import '../styles/AddAlbumForm.css'
 const AddAlbumForm = ({ onAddAlbum }) => {
   const [albumName, setAlbumName] = useState('');
 

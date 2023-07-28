@@ -5,6 +5,7 @@ import AddAlbumForm from './components/AddAlbumForm';
 import AlbumDetails from './components/AlbumDetails';
 import EditAlbumForm from './components/EditAlbumForm';
 
+import './styles/App.css'
 
 const updateAlbumsInLocalStorage = (albums) => {
   localStorage.setItem('albums', JSON.stringify(albums));
@@ -26,6 +27,21 @@ const App = () => {
   useEffect(() => {
     updateAlbumsInLocalStorage(albums);
   }, [albums]);
+
+  const fetchAlbums = async () => {
+    try {
+      const response = await fetch('http://api.example.com/albums'); // Substitua pela URL da sua API
+      if (!response.ok) {
+        throw new Error('Failed to fetch albums from API');
+      }
+      const data = await response.json();
+      setAlbums(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  
 
   const handleSearch = (keyword) => {
     const filteredAlbums = albums.filter((album) =>
@@ -73,6 +89,10 @@ const App = () => {
       setAlbums(updatedAlbums);
     }
   };
+
+  useEffect(() => {
+    fetchAlbums();
+  }, []);
 
   return (
     <div className="App">
